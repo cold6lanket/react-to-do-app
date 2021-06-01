@@ -8,6 +8,7 @@ export default class PostAddForm extends Component {
         this.state = {
             text: ''
         };
+
         this.onValueChange = this.onValueChange.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
     }
@@ -20,7 +21,11 @@ export default class PostAddForm extends Component {
 
     onSubmit(e) {
         e.preventDefault();
-        this.props.onAdd(this.state.text);
+        const {text} = this.state;
+
+        if (text.length === 0) return;
+
+        this.props.onAdd(text);
         this.setState({
             text: ''
         });

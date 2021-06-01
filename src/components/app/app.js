@@ -32,11 +32,7 @@ export default class App extends Component {
 
     deleteItem(id) {
         this.setState(({data}) => {
-            const index = data.findIndex(elem => elem.id === id);
-
-            const before = data.slice(0, index);
-            const after = data.slice(index + 1);
-            const newArr = [...before, ...after];
+            const newArr = data.filter(elem => elem.id !== id);
 
             return {
                 data: newArr
