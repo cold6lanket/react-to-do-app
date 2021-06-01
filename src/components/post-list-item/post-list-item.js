@@ -38,7 +38,6 @@ export default class PostListItem extends Component {
                     >
                         <i className="fa fa-trash-o"></i>
                     </button>
-                    <i className="fa fa-heart" ></i>
                 </div>
             </div>
         )
